@@ -1,7 +1,9 @@
 
 import { Box, Container, Typography, Alert } from '@mui/material';
 import { useWeatherContext } from '../context/WeatherContext';
+import {CurrentWeather} from './CurrentWeather';
 import {ForecastList} from './ForecastList';
+import {SearchBar} from './SearchBar';
 
 export const WeatherDashboard = () => {
   const { weatherData, error, loading } = useWeatherContext();
@@ -12,7 +14,8 @@ export const WeatherDashboard = () => {
         Weather Dashboard
       </Typography>
       
-      
+      <SearchBar /> 
+
       {error && (
         <Alert severity="error" sx={{ mb: 3 }}>
           {error}
@@ -35,6 +38,7 @@ export const WeatherDashboard = () => {
       
       {weatherData && (
         <>
+          <CurrentWeather />
           <ForecastList />
         </>
       )}

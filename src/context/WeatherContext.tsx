@@ -23,7 +23,7 @@ export const WeatherProvider = ({ children }: { children: ReactNode }) => {
     setError(null);
     
     try {
-      const data = await fetchWeatherData(location);
+      const data = await fetchWeatherData(location || 'London');
       setWeatherData(data);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'An unknown error occurred');

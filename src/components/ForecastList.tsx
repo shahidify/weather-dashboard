@@ -15,7 +15,7 @@ export const ForecastList = () => {
       </Typography>
       <Grid container spacing={2}>
         {weatherData.forecast.forecastday.map((day) => (
-          <Grid item xs={12} sm={6} md={4} lg={3} key={day.date}>
+          <Grid size={{ xs: 12, sm: 6 }} key={day.date}>
             <WeatherCard forecastDay={day} />
           </Grid>
         ))}

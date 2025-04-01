@@ -1,12 +1,12 @@
 import { WeatherData } from '../types/weather';
 
-const API_KEY = 'YOUR_WEATHER_API_KEY'; // Replace with your actual API key
+const API_KEY = ''; // Replace with your actual API key
 const BASE_URL = 'https://api.weatherapi.com/v1';
 
 export const fetchWeatherData = async(location: string): Promise<WeatherData> => {
   try {
     const response = await fetch(
-      `${BASE_URL}/forecat.json?key=${API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
+      `${BASE_URL}/forecast.json?key=${API_KEY}&q=${location}&days=7&aqi=no&alerts=no`
     );
   
   

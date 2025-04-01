@@ -1,5 +1,5 @@
 import { Box, Card, CardContent, Typography, Grid, Divider } from '@mui/material';
-import { useWeatherContext } from '../context/useWeatherContext';
+import { useWeatherContext } from '../context/WeatherContext';
 
 export const CurrentWeather = () => {
   const { weatherData } = useWeatherContext();
@@ -39,19 +39,19 @@ export const CurrentWeather = () => {
         <Divider sx={{ my: 2 }} />
 
         <Grid container spacing={2}>
-          <Grid item xs={6} sm={3}>
+          <Grid size={{ xs: 6, sm: 3 }}>
             <Typography variant="body2" color="text.secondary">Humidity</Typography>
             <Typography variant="body1">{current.humidity}%</Typography>
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid size={{ xs: 6, sm: 3 }}>
             <Typography variant="body2" color="text.secondary">Wind</Typography>
             <Typography variant="body1">{current.wind_kph} km/h</Typography>
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid size={{ xs: 6, sm: 3 }}>
             <Typography variant="body2" color="text.secondary">UV Index</Typography>
             <Typography variant="body1">{current.uv}</Typography>
           </Grid>
-          <Grid item xs={6} sm={3}>
+          <Grid size={{ xs: 6, sm: 3 }}>
             <Typography variant="body2" color="text.secondary">Temperature</Typography>
             <Typography variant="body1">{current.temp_f}°F | {current.temp_c}°C</Typography>
           </Grid>
